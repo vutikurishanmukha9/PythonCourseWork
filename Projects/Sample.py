@@ -1,1 +1,1 @@
-print("This project is for the Projects")
+print("This Folder is for the Projects")
