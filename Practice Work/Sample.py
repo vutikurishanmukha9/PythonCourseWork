@@ -1,1 +1,1 @@
-print("This Folder is created to store the practice work")
+print("This Folder is created for  the practice work")
