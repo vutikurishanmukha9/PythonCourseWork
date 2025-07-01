@@ -12,3 +12,5 @@ b = 20 #Stroing the values into varibles
 # 10 20 #Output before swaping
 a,b = b,a #Swaping operation is being performed
 # 20 10 #Output after swaping the varibles
+a,b,c = 10,20,30
+print("a,b,c") #10,20,30 is the Output
