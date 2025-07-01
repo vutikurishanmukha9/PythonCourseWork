@@ -1,1 +1,1 @@
-print("This Folder is for the Assignments")
+print("This Folder is Store the Assignments")
