@@ -3,6 +3,10 @@
 #Arithmetic Operators
 a = 20
 b = 10
+
+print("a:", a)  # Output: 20
+print("b:", b)  # Output: 10
+
 print("Addition(+) of a,b:",a+b) #30 //Addition
 print("Subtraction(-) of a,b:",a-b) #10 //Subtraction
 print("Multiplication(*) of a,b:",a*b) #200 //Multiplication
