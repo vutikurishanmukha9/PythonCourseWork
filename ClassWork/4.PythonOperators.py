@@ -10,3 +10,6 @@ print("Floor Division(//):",a//b) #2 //Floor divison to get the output in Intege
 print("Divison(/):",a/b) #2.0 //Division to print the remainder 
 print("Modulos Divison(%):",a%b) #0 //Modulos Divison to print remainder
 print("Exponentional(**):",a**b) #10240000000000 //Raises the first number to the power of the second
+
+
+#Comparison Operators
