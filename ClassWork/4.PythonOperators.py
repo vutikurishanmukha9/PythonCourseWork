@@ -47,4 +47,4 @@ print("Modulus & Assign to a:",a) # b is Modulus & Assign to a
 a **= b
 print("Exponentiate & Assign to a:",a) #b is Exponentiate & Assign to a
 
-# Logical Operators
+# Logial Operators
