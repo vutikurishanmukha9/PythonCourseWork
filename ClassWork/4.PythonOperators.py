@@ -47,4 +47,15 @@ print("Modulus & Assign to a:",a) # b is Modulus & Assign to a
 a **= b
 print("Exponentiate & Assign to a:",a) #b is Exponentiate & Assign to a
 
-# Logial Operators
+# Logical Operators
+print("AND logic for a,b,c:",2000 > a and 2000 > b and 2000 > c) #Returns True if both conditions are true
+print("OR Logic for a,b,c:", 1000 > a or 1000 > b or 1000 > c) #Returns True if at least one condition is true
+print("NOT logic for b,c:", not(b > c)) #Reverses the condition (True becomes False)
+
+#Membership Operators
+
+fruits = ["apple", "banana", "cherry"]
+
+print("in operators check if a value exists within a sequence:", "apple" in fruits) # Returns True if the value exists in the sequence
+print("not in operators check if a value exists within a sequence:","grape" not in fruits) # Returns True if the value does NOT exist in the sequence
+
