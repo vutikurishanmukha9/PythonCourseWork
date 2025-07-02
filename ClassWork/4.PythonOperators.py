@@ -59,3 +59,28 @@ fruits = ["apple", "banana", "cherry"]
 print("in operators check if a value exists within a sequence:", "apple" in fruits) # Returns True if the value exists in the sequence
 print("not in operators check if a value exists within a sequence:","grape" not in fruits) # Returns True if the value does NOT exist in the sequence
 
+
+# Identity Operators Example
+
+
+X = [1, 2, 3, 4, 5]
+Y = [6, 7, 8, 9, 10]
+Z = X  # Z now refers to the same object in memory as X
+
+
+print(X)  # Output: [1, 2, 3, 4, 5]
+print(Y)  # Output: [6, 7, 8, 9, 10]
+print(Z)  # Output: [1, 2, 3, 4, 5], same as X
+
+# Check if X and Z refer to the same object (True because Z = X)
+print(X is Z)  # Output: True
+
+# Check if Y and Z refer to the same object (False because Y is a different list)
+print(Y is Z)  # Output: False
+
+
+print(id(X))  # Same as id(Z), because X and Z refer to the same object
+print(id(Y))  # Different ID, because Y is a different object
+print(id(Z))  # Same as id(X)
+
+
