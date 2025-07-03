@@ -96,3 +96,63 @@ print(Y is Z)  # Output: False
 print(id(X))  # Same as id(Z), because X and Z refer to the same object
 print(id(Y))  # Different ID, because Y is a different object
 print(id(Z))  # Same as id(X)
+
+
+#Bitwise operator
+# 1-0001
+# 2-0010
+# 3-0011
+# 4-0100
+# 5-0101
+# 6-0110
+# 7-0111
+# 8-1000
+# 9-1001
+# 10-1010
+
+x = 5 # Binary: 0101
+y = 3 # Binary: 0011
+print("AND Operation for the x and y is :",x & y) # Output: 1 (Binary: 0001 → AND operation)
+print("OR Operation for the x and y is :",x | y) # Output: 7 (Binary: 0111 → OR operation)
+print("XOR Operation for the x and y is :",x ^ y) # Output: 6 (Binary: 0110 → XOR operation)
+print("NOT Operation for the x and y is :",~x) # Output: -6 (Binary: Inverts bits of 5)
+print("LEFT SHIFT Operation for the x and y is :",x << 1) # Output: 10 (Binary: 1010 → Shifts left by 1)
+print("RIGHT SHIFT Operation for the x and y is :",x >> 1) # Output: 2 (Binary: 0010 → Shifts right by 1)
+
+# Declare two integers
+a = 12  # Binary: 1100
+b = 5   # Binary: 0101
+
+# Bitwise AND (&)
+print(a & b)  # Output: 4
+# 1100 (12)
+# 0101 (5)
+# ----
+# 0100 (4)
+
+# Bitwise OR (|)
+print(a | b)  # Output: 13
+# 1100 (12)
+# 0101 (5)
+# ----
+# 1101 (13)
+
+# Bitwise XOR (^)
+print(a ^ b)  # Output: 9
+# 1100 (12)
+# 0101 (5)
+# ----
+# 1001 (9)
+
+# Bitwise NOT (~)
+print(~a)  # Output: -13
+# Inverts all bits of a → -(a+1)
+# ~12 = -13
+
+# Left Shift (<<)
+print(a << 2)  # Output: 48
+# 1100 << 2 becomes 110000 → binary for 48
+
+# Right Shift (>>)
+print(a >> 2)  # Output: 3
+# 1100 >> 2 becomes 0011 → binary for 3
