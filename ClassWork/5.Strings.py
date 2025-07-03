@@ -44,168 +44,50 @@ print("The Reverse slicing of the RCB is:",RCB[-10:-5]) #The Reverse slicing of 
 print("The Reverse slicing of the RCB is:",RCB[-15:-10]) #The Reverse slicing of the RCB is: kohli
 print("The Output after slicing:",RCB[-15:-10]) #The Output after slicing: kohli
 print("Printing the Reversing of the:",RCB[::-1]) #Printing the Reversing of the: tajarivuhbilhok
+print("Printing the Reversing of the string by skipping some part:",RCB[-1:-6:-1]) #Printing the Reversing of the string by skipping some part: tajar
+
+#Membership (in, not in) - Checking if a substring exists within a string.
+
+print(RCB) #kohlibhuvirajat
+print("Checking whether kolhi is present in RCB or not:",'kohli' in RCB) #Checking whether kolhi is present in RCB or not: True
+print("Checking whether maxi is present in RCB or not:",'maxi' in RCB) #Checking whether maxi is present in RCB or not: False
+print("Checking whether Green is present in RCB or not:",'green'  not in RCB) #Checking whether Green is present in RCB or not: True
+print("Checking whether siraj is present in RCB or not:",'siraj' not in RCB) #Checking whether siraj is present in RCB or not: True
+
+#Built-in String Functions
+
+print(RCB)  #kohlibhuvirajat
+print("The length of the String that present in RCB:",len(RCB)) #The length of the String that present in RCB: 15
+print("The largest element that present in the RCB:",max(RCB)) #The largest element that present in the RCB: v
+print("The Smallest element that presents in the RCB:",min(RCB)) #The Smallest element that presents in the RCB: a
+print("Sorting all the elements that contain in the RCB:",sorted(RCB)) #Sorting all the elements that contain in the RCB: ['a', 'a', 'b', 'h', 'h', 'i', 'i', 'j', 'k', 'l', 'o', 'r', 't', 'u', 'v']
+print("The ASCII value of the element in the string that stored in the RCB:",ord('H')) #The ASCII value of the element in the string that stored in the RCB: 72
 
 
-# names
-# 'HarshithSowmyaKiranVarunMani'
-# names[-1:-4:-1]
-# 'ina'
-# names[-1:-5:-1]
-# 'inaM'
-# names[-5:-10:-1]
-# 'nuraV'
-# names[-15:-10:-1]
-# ''
-# names[-10:-15:-1]
-# 'nariK'
-# names
-# 'HarshithSowmyaKiranVarunMani'
-# 'Kiran' in names
-# True
-# 'Adithya' in names
-# False
-# 'Hema' not in names
-# True
-# 'mounika' not in names
-# True
-# names
-# 'HarshithSowmyaKiranVarunMani'
-# len(names)
-# 28
-# max(names)
-# 'y'
-# min(names)
-# 'H'
-# sorted(names)
-# ['H', 'K', 'M', 'S', 'V', 'a', 'a', 'a', 'a', 'a', 'h', 'h', 'i', 'i', 'i', 'm', 'n', 'n', 'n', 'o', 'r', 'r', 'r', 's', 't', 'u', 'w', 'y']
-# ord('H')
-# 72
-# ord('K')
-# 75
-# ord('S')
-# 83
-# ord('a')
-# 97
-# chr(97)
-# 'a'
-# chr(1)
-# '\x01'
-# chr(30)
-# '\x1e'
-# chr(101)
-# 'e'
-# chr(120)
-# 'x'
-# chr(130)
-# '\x82'
-# ord('1')
-# 49
-# ord('9')
-# 57
-# ord('@')
-# 64
-# names
-# 'HarshithSowmyaKiranVarunMani'
-# names.upper()
-# 'HARSHITHSOWMYAKIRANVARUNMANI'
-# names.lower()
-# 'harshithsowmyakiranvarunmani'
-# names.capitalize()
-# 'Harshithsowmyakiranvarunmani'
-# d='python programming lang'
-# d.title()
-# 'Python Programming Lang'
-# d
-# 'python programming lang'
-# d.captilize()
-# Traceback (most recent call last):
-#   File "<pyshell#94>", line 1, in <module>
-#     d.captilize()
-# AttributeError: 'str' object has no attribute 'captilize'. Did you mean: 'capitalize'?
-# d.capitalize()
-# 'Python programming lang'
-# d
-# 'python programming lang'
-# d
-# 'python programming lang'
-# names
-# 'HarshithSowmyaKiranVarunMani'
-# names.swapcase()
-# 'hARSHITHsOWMYAkIRANvARUNmANI'
-# k='नमते你好'
-# k.swapcase()
-# 'नमते你好'
-# k.casefold()
-# 'नमते你好'
-# k="🙂"
-# k
-# '🙂'
-# "ß".casefold()
-# 'ss'
-# "ß".lower()
-# 'ß'
-# d
-# 'python programming lang'
-# d.center(50,'-')
-# '-------------python programming lang--------------'
-# d.center(50,'*')
-# '*************python programming lang**************'
-# d.center(50,' ')
-# '             python programming lang              '
-# d.ljust(50,'_')
-# 'python programming lang___________________________'
-# d.rjust(50,'_')
-# '___________________________python programming lang'
-# "name".ljust(10,' ')
-# 'name      '
-# 'age'.ljust(10,' ')
-# 'age       '
-# 'dob'.ljust(10,' ')
-# 'dob       '
-# 'Address'.ljust(10,' ')
-# 'Address   '
-# "name".ljust(10,' ')+'sdfgyui'
-# 'name      sdfgyui'
-# '42'.zfill(5)
-# '00042'
-# '301'.zfill(2)
-# '301'
-# '301'.zfill(5)
-# '00301'
-# '4321'.zfill(5)
-# '04321'
-# names
-# 'HarshithSowmyaKiranVarunMani'
-# names.find("kiran")
-# -1
-# names.find("Kiran")
-# 14
-# names.find(names[:8])
-# 0
-# names.find(names[14:19])
-# 14
-# names.find('z')
-# -1
-# names.find('H')
-# 0
-# names.find('S')
-# 8
-# names.find('a')
-# 1
-# names.rfind('a')
-# 25
-# names.index('S')
-# 8
-# names.index('z')
-# Traceback (most recent call last):
-#   File "<pyshell#133>", line 1, in <module>
-#     names.index('z')
-# ValueError: substring not found
-# names
-# 'HarshithSowmyaKiranVarunMani'
-# names.count('a')
-# 5
-# names.count('i')
-# 3
-# names.count('r')
-# 3
+# Complete List of Python String Methods with Examples
+
+# 1. Case Conversion Methods
+
+print("Converting all the elements in s to the UPPER CASE:",s.upper())       #Converting all the elements in s to the UPPER CASE: SHANMUKH VUTIKURI
+print("Converting all the elements in s to the lower CASE:",s.lower())        #Converting all the elements in s to the lower CASE: shanmukh vutikuri
+
+k = 'shanmukh vutikuri'
+
+print("Capitalizes the first character:",k.capitalize())          #Capitalizes the first character: Shanmukh vutikuri
+print("Capitalizes the first letter of each word:",k.title())      #Capitalizes the first letter of each word: Shanmukh Vutikuri
+print("Swaps case: upper → lower, lower → upper:",s.swapcase())     #Swaps case: upper → lower, lower → upper: sHANMUKH vUTIKURI
+print("ß".casefold())           # ss
+
+# 2. Alignment & Formatting Methods
+
+print("Centers the String within the Width:",s.center(40,'*'))        #Centers the String within the Width: ***********Shanmukh Vutikuri************
+print("Left-align the String within the Width:",s.ljust(25,"-"))       #Left-align the String within the Width: Shanmukh Vutikuri--------
+print("Rignt-align the String within the Width:",s.rjust(25,"_"))       #Rignt-align the String within the Width: ________Shanmukh Vutikuri
+print("Pads the string with zeros on the left:",'17/12/2003'.zfill(10))   #Pads the string with zeros on the left: 17/12/2003
+
+# 3. Search & Find Methods
+
+print("Returns the index of first occurrence, -1 if not found:",s.find('shan'))       #Returns the index of first occurrence, -1 if not found: -1
+print("Returns the last occurrence of the substring:",s.rfind('i'))  #Returns the last occurrence of the substring: 16
+print("Counts how many times 'a' appears:",s.count('a'))             #Counts how many times 'a' appears: 1
+print("Counts how many times 's' appears:",k.count('s'))             #Counts how many times 's' appears: 1
