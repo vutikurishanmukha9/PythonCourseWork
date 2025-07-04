@@ -105,30 +105,30 @@ print("Checking whether the String contains all charcters or not:","Hello".isalp
 print("Checking whether the String contains all charcters or not:","Hello123".isalpha())  # False → Contains digits
 
 # 4. isalnum() – Returns True if all characters are alphanumeric (letters and numbers)
-print("abc123".isalnum())  # True → Letters + digits only
-print("abc_123".isalnum())  # False → Contains underscore (_)
+print("Checking whether the string contains alphanumeric (letters and numbers) or not:","abc123".isalnum())  # True → Letters + digits only
+print("Checking whether the string contains alphanumeric (letters and numbers) or not:","abc_123".isalnum())  # False → Contains underscore (_)
 
 # 5. islower() – Returns True if all alphabetic characters are lowercase
-print("hello".islower())  # True → All characters are lowercase
-print("Hello".islower())  # False → Contains uppercase 'H'
+print("Checking whether all alphabetic characters in string are lowercase:","hello".islower())  # True → All characters are lowercase
+print("Checking whether all alphabetic characters in string are lowercase:","Hello".islower())  # False → Contains uppercase 'H'
 
 # 6. isupper() – Returns True if all alphabetic characters are uppercase
-print("HELLO".isupper())  # True → All characters are uppercase
-print("Hello".isupper())  # False → Contains lowercase 'e', 'l', 'l', 'o'
+print("Checking whether all alphabetic characters in string are UPPERcase:","HELLO".isupper())  # True → All characters are uppercase
+print("Checking whether all alphabetic characters in string are UPPERcase:","Hello".isupper())  # False → Contains lowercase 'e', 'l', 'l', 'o'
 
 # 7. isspace() – Returns True if the string contains only whitespace characters
-print("   ".isspace())  # True → Only spaces
-print(" \n\t".isspace())  # True → Whitespace characters (space, newline, tab)
-print("a b".isspace())  # False → Contains non-whitespace characters
+print("Checking whether the string contains only whitespace characters:","   ".isspace())  # True → Only spaces
+print("Checking whether the string contains only whitespace characters:"," \n\t".isspace())  # True → Whitespace characters (space, newline, tab)
+print("Checking whether the string contains only whitespace characters:","a b".isspace())  # False → Contains non-whitespace characters
 
 # 8. istitle() – Returns True if string is in title case (each word starts with uppercase letter)
-print("Hello World".istitle())  # True → Each word starts with uppercase
-print("hello world".istitle())  # False → Words not capitalized
+print("Checking whether the string is in title case:","Hello World".istitle())  # True → Each word starts with uppercase
+print("Checking whether the string is in title case:","hello world".istitle())  # False → Words not capitalized
 
 # 9. isidentifier() – Returns True if string is a valid Python identifier
-print("variable1".isidentifier())  # True → Valid Python variable name
-print("1variable".isidentifier())  # False → Cannot start with a digit
-print("for".isidentifier())  # True → Valid identifier but a Python keyword
+print("Checking whether the string is a valid Python identifier:","variable1".isidentifier())  # True → Valid Python variable name
+print("Checking whether the string is a valid Python identifier:","1variable".isidentifier())  # False → Cannot start with a digit
+print("Checking whether the string is a valid Python identifier:","for".isidentifier())  # True → Valid identifier but a Python keyword
 
 # 10. isdecimal() – Returns True if all characters are decimal digits (0–9)
 print("12345".isdecimal())  # True → All decimal digits
@@ -142,6 +142,8 @@ print("²".isdigit())  # True → Superscript 2 is considered a digit
 print("12345".isnumeric())  # True → Digits
 print("½".isnumeric())  # True → Fraction
 print("Verifing whether the number is numeric or not:","Ⅷ".isnumeric())  # True → Roman numeral 8
+
+#5. Replace & Modify Methods
 
 # 1. replace function
 
@@ -177,3 +179,90 @@ print("Translated text is:",translated)  # Output: "pyth#5"
 # 'o' → '#' and 'n' → '5'
 # So, 'python' becomes 'pyth#5'
 
+#6.Splitting & Joining Methods
+
+# 1. split(sep)
+# Splits the string into a list of substrings using the specified separator.
+data = "a,b,c"
+print(data.split(","))  # Output: ['a', 'b', 'c']
+# Explanation: The comma ',' is used as the separator to split the string into parts.
+
+# 2. rsplit(sep, maxsplit)
+# Same as split(), but starts splitting from the right.
+data = "a,b,c"
+print(data.rsplit(",", 1))  # Output: ['a,b', 'c']
+# Explanation: Only 1 split is done from the rightmost separator.
+
+
+# 3. splitlines()
+# Splits the string at line breaks (\n or \r\n) into a list of lines.
+text = "Hello\nWorld"
+print(text.splitlines())  # Output: ['Hello', 'World']
+# Explanation: It separates the string wherever a newline character appears.
+
+# 4. join(iterable)
+# Joins the elements of an iterable (like a list or tuple) into a single string using the string as the separator.
+words = ["Hello", "World"]
+print(" ".join(words))  # Output: "Hello World"
+# Explanation: A space character " " is used to join the words into one string.
+
+# 5. partition(sep)
+# Splits the string into a 3-part tuple: (before_sep, sep, after_sep)
+text = "apple-pie"
+print(text.partition("-"))  # Output: ('apple', '-', 'pie')
+# Explanation: It splits at the first occurrence of '-' and keeps the separator in the result.
+
+# 6. rpartition(sep)
+# Similar to partition(), but splits at the **last** occurrence of the separator.
+text = "apple-pie"
+print(text.rpartition("-"))  # Output: ('apple', '-', 'pie')
+# In this example, the result is the same as partition() since there's only one separator.
+# But if multiple separators exist, rpartition() uses the **last** one.
+
+#7. Whitespace & Trimming Methods
+
+# 1. strip([chars])
+# Removes leading (left) and trailing (right) characters from the string.
+# By default, it removes whitespace characters like space, tab, newline.
+
+text = "   hello   "
+print(text.strip())  # Output: "hello"
+# Explanation: Removes spaces from both ends (not in the middle)
+
+# You can also remove specific characters by passing them as an argument.
+text = "---hello---"
+print(text.strip("-"))  # Output: "hello"
+# Explanation: Removes '-' characters from both the beginning and end
+
+# 2. lstrip([chars])
+# Removes characters from the left (start) of the string.
+text = "---hello"
+print(text.lstrip("-"))  # Output: "hello"
+# Explanation: Strips only the left side of '-' characters
+
+# 3. rstrip([chars])
+# Removes characters from the right (end) of the string.
+text = "hello---"
+print(text.rstrip("-"))  # Output: "hello"
+# Explanation: Strips only the right side of '-' characters
+
+#8. Encoding & Decoding Methods
+
+# 1. encode(encoding)
+# Converts a string into a bytes object using the specified encoding.
+# Common encoding: "utf-8" (most widely used for text data)
+
+text = "hello"
+encoded_bytes = text.encode("utf-8")
+print(encoded_bytes)  # Output: b'hello'
+# Explanation: The string "hello" is encoded into a bytes object.
+# The prefix `b` indicates that it's a byte string (not regular string).
+
+# 2. decode(encoding)
+# Converts a bytes object back to a regular string using the specified encoding.
+# This is the reverse of encode().
+
+byte_data = b'hello'
+decoded_text = byte_data.decode("utf-8")
+print(decoded_text)  # Output: "hello"
+# Explanation: The byte object is decoded back into a normal string using UTF-8 encoding.
