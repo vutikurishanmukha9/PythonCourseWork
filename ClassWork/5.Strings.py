@@ -88,6 +88,58 @@ print("Pads the string with zeros on the left:",'17/12/2003'.zfill(10))   #Pads 
 # 3. Search & Find Methods
 
 print("Returns the index of first occurrence, -1 if not found:",s.find('shan'))       #Returns the index of first occurrence, -1 if not found: -1
-print("Returns the last occurrence of the substring:",s.rfind('i'))  #Returns the last occurrence of the substring: 16
-print("Counts how many times 'a' appears:",s.count('a'))             #Counts how many times 'a' appears: 1
-print("Counts how many times 's' appears:",k.count('s'))             #Counts how many times 's' appears: 1
+print("Returns the last occurrence of the substring:",s.rfind('i'))                   #Returns the last occurrence of the substring: 16
+print("Counts how many times 'a' appears:",s.count('a'))                              #Counts how many times 'a' appears: 1
+print("Counts how many times 's' appears:",k.count('s'))                              #Counts how many times 's' appears: 1
+
+#4. String Testing Methods (Boolean Results)
+
+### 1. startswith(sub) – Checks if a string starts with a given substring
+print("python".startswith("py"))  # True → "python" starts with "py"
+
+# 2. endswith(sub) – Checks if a string ends with a given substring
+print("python".endswith("on"))  # True → "python" ends with "on"
+
+# 3. isalpha() – Returns True if all characters are alphabetic (no numbers or symbols)
+print("Hello".isalpha())  # True → All characters are alphabets
+print("Hello123".isalpha())  # False → Contains digits
+
+# 4. isalnum() – Returns True if all characters are alphanumeric (letters and numbers)
+print("abc123".isalnum())  # True → Letters + digits only
+print("abc_123".isalnum())  # False → Contains underscore (_)
+
+# 5. islower() – Returns True if all alphabetic characters are lowercase
+print("hello".islower())  # True → All characters are lowercase
+print("Hello".islower())  # False → Contains uppercase 'H'
+
+# 6. isupper() – Returns True if all alphabetic characters are uppercase
+print("HELLO".isupper())  # True → All characters are uppercase
+print("Hello".isupper())  # False → Contains lowercase 'e', 'l', 'l', 'o'
+
+# 7. isspace() – Returns True if the string contains only whitespace characters
+print("   ".isspace())  # True → Only spaces
+print(" \n\t".isspace())  # True → Whitespace characters (space, newline, tab)
+print("a b".isspace())  # False → Contains non-whitespace characters
+
+# 8. istitle() – Returns True if string is in title case (each word starts with uppercase letter)
+print("Hello World".istitle())  # True → Each word starts with uppercase
+print("hello world".istitle())  # False → Words not capitalized
+
+# 9. isidentifier() – Returns True if string is a valid Python identifier
+print("variable1".isidentifier())  # True → Valid Python variable name
+print("1variable".isidentifier())  # False → Cannot start with a digit
+print("for".isidentifier())  # True → Valid identifier but a Python keyword
+
+# 10. isdecimal() – Returns True if all characters are decimal digits (0–9)
+print("12345".isdecimal())  # True → All decimal digits
+print("²".isdecimal())  # False → Superscript 2 is not a decimal digit
+
+# 11. isdigit() – Returns True if all characters are digits (includes superscripts, etc.)
+print("12345".isdigit())  # True → All digits
+print("²".isdigit())  # True → Superscript 2 is considered a digit
+
+# 12. isnumeric() – Returns True if characters are numeric (includes digits, fractions, etc.)
+print("12345".isnumeric())  # True → Digits
+print("½".isnumeric())  # True → Fraction
+print("Ⅷ".isnumeric())  # True → Roman numeral 8
+
