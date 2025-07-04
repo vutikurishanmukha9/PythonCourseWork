@@ -95,14 +95,14 @@ print("Counts how many times 's' appears:",k.count('s'))                        
 #4. String Testing Methods (Boolean Results)
 
 ### 1. startswith(sub) – Checks if a string starts with a given substring
-print("python".startswith("py"))  # True → "python" starts with "py"
+print("Checking whether the String starts with py or not:","python".startswith("py"))  # True → "python" starts with "py"
 
 # 2. endswith(sub) – Checks if a string ends with a given substring
-print("python".endswith("on"))  # True → "python" ends with "on"
+print("Checking whether the String ends with py or not:","python".endswith("on"))  # True → "python" ends with "on"
 
 # 3. isalpha() – Returns True if all characters are alphabetic (no numbers or symbols)
-print("Hello".isalpha())  # True → All characters are alphabets
-print("Hello123".isalpha())  # False → Contains digits
+print("Checking whether the String contains all charcters or not:","Hello".isalpha())  # True → All characters are alphabets
+print("Checking whether the String contains all charcters or not:","Hello123".isalpha())  # False → Contains digits
 
 # 4. isalnum() – Returns True if all characters are alphanumeric (letters and numbers)
 print("abc123".isalnum())  # True → Letters + digits only
@@ -141,5 +141,39 @@ print("²".isdigit())  # True → Superscript 2 is considered a digit
 # 12. isnumeric() – Returns True if characters are numeric (includes digits, fractions, etc.)
 print("12345".isnumeric())  # True → Digits
 print("½".isnumeric())  # True → Fraction
-print("Ⅷ".isnumeric())  # True → Roman numeral 8
+print("Verifing whether the number is numeric or not:","Ⅷ".isnumeric())  # True → Roman numeral 8
+
+# 1. replace function
+
+# Replaces all occurrences of the substring `old` with the substring `new`.
+
+text = "apple"
+print(text.replace("p", "b"))  # Output: "abble" # Explanation: All 'p' characters are replaced with 'b'
+
+# 2. Function - str.maketrans(from_str, to_str)
+# Creates a translation table that maps each character in from_str to the corresponding character in to_str.
+# Used together with the translate() method.
+
+# Example: Replacing 'a' with '%', 'o' with '#', and 'n' with '5'
+
+trans_table = str.maketrans("aon", "%#5")
+print(trans_table)        # Output: {97: 37, 111: 35, 110: 53}
+
+# Explanation:
+# ASCII of 'a' (97) → '%' (37)
+# ASCII of 'o' (111) → '#' (35)
+# ASCII of 'n' (110) → '5' (53)
+
+# 3. function - translate(table)
+
+# Applies the translation table created by str.maketrans() to the string.
+
+text = "python"
+table = str.maketrans("aon", "%#5")
+translated = text.translate(table)
+print("Translated text is:",translated)  # Output: "pyth#5"
+
+# Explanation:
+# 'o' → '#' and 'n' → '5'
+# So, 'python' becomes 'pyth#5'
 
