@@ -1,0 +1,140 @@
+What is OOP?
+Object-Oriented Programming (OOP) is a programming paradigm based on the concept of “objects”,
+which can contain data (attributes) and code (methods). OOP helps you organize code better, 
+reuse it, and reduce complexity.
+
+The 4 Pillars of OOPs are:
+
+1. Encapsulation
+2. Abstraction
+3. Inheritance
+4. Polymorphism
+
+1️⃣ Encapsulation – “Hiding the internal details”
+
+Definition:
+Encapsulation is the process of wrapping data and the methods that operate on that data into
+a single unit (a class) and restricting access to some of the object’s components.
+
+Access specifiers like private, protected, and public are used to control access.
+
+Real-life Example:
+
+ATM Machine
+
+You insert your card and enter your PIN.
+
+You don't need to know how it verifies your PIN or connects to your bank.
+
+All complex logic is hidden inside.
+
+Just like:
+
+class ATM:
+    def __init__(self):
+        self.__pin = 1234  # private data
+
+    def check_pin(self, input_pin):
+        if input_pin == self.__pin:
+            return "Access Granted"
+        else:
+            return "Access Denied"
+Here, the __pin is hidden and protected from direct access.
+
+2️⃣ Abstraction – “Showing only the essential details”
+
+Definition:
+Abstraction means hiding complex logic and showing only relevant features. It’s about what an object does, not how it does it.
+
+🚗 Real-life Example:
+Car Driving
+
+You turn the steering wheel or press the brake.
+
+You don’t need to know how the engine or brake system works internally.
+
+Just like:
+
+
+from abc import ABC, abstractmethod
+
+class Car(ABC):
+    @abstractmethod
+    def drive(self):
+        pass
+
+class Tesla(Car):
+    def drive(self):
+        return "Driving a Tesla!"
+
+car = Tesla()
+print(car.drive())
+Car is an abstract class defining the interface, while Tesla implements the details.
+
+3️⃣ Inheritance – “Reusing code from existing classes”
+
+Definition:
+Inheritance allows one class (child) to inherit properties and behavior from another class (parent). It promotes code reusability.
+
+👨‍👧 Real-life Example:
+Parent and Child
+
+A child inherits traits like eye color or height from their parents.
+
+Just like:
+
+
+class Animal:
+    def speak(self):
+        return "I can make a sound"
+
+class Dog(Animal):
+    def bark(self):
+        return "Woof!"
+
+dog = Dog()
+print(dog.speak())  # From Animal
+print(dog.bark())   # From Dog
+Dog inherits the speak() method from Animal.
+
+
+4️⃣ Polymorphism – “One interface, many forms”
+ 
+Definition:
+Polymorphism means using a single function or method name to perform different tasks depending on the object. It allows different classes to be treated as if they are the same.
+
+🎨 Real-life Example:
+Remote Control
+
+One remote can control TV, AC, or Music System depending on what it is connected to.
+
+Just like:
+
+python
+Copy
+Edit
+class Bird:
+    def sound(self):
+        return "Chirp"
+
+class Dog:
+    def sound(self):
+        return "Bark"
+
+# Polymorphism in action
+def make_sound(animal):
+    print(animal.sound())
+
+make_sound(Bird())  # Chirp
+make_sound(Dog())   # Bark
+Here, the same make_sound() function works with different objects.
+
+
+| Pillar        | What it Does                       | Real-life Example | Python Concept Used         |
+| ------------- | ---------------------------------- | ----------------- | --------------------------- |
+| Encapsulation | Hides internal data                | ATM               | Private variables, methods  |
+| Abstraction   | Shows only what is necessary       | Car Driving       | Abstract Classes/Interfaces |
+| Inheritance   | Reuse code from parent class       | Parent → Child    | `class Child(Parent)`       |
+| Polymorphism  | One function, many implementations | Universal Remote  | Method Overriding           |
+
+
