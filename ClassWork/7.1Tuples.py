@@ -87,3 +87,21 @@ print("The total sum of the tuple is:",sum(t)) #The total sum of the tuple is: 1
 
 # tuple(iterable) -- Converts an iterable (like a list or string) to a tuple
 print("Coverting of the tuple into into list:",list(t))  #Coverting of the tuple into into list: [1, 2, 3, 4, 5, 6, 7, 8, 9, 1, 2, 3, 6, 5, 4, 7, 8, 9, 6, 3, 2, 5, 8, 7, 4, 1]
+
+
+
+
+# ## 9. Differences Between List and Tuple
+
+# | Feature         | List                            | Tuple                           |
+# |-----------------|---------------------------------|---------------------------------|
+# | **Mutability**  | Mutable (can be changed)        | Immutable (cannot be changed)   |
+# | **Syntax**      | `[1, 2, 3]`                     | `(1, 2, 3)` or `1, 2, 3`        |
+# | **Speed**       | Slower                          | Faster                          | 
+# | **Memory**      | Uses more memory                | More memory-efficient           |
+# | **Methods**     | Many: `append()`, `pop()`, etc. | Few: `count()`, `index()        |
+# | **Hashable**    | Not hashable                    | Hashable (if elements are)      |
+# | **Dict Key**    | Cannot be used as key           | Can be used as key              |
+# | **Use Case**    | When data may change            | When data should remain constant|
+# | **Conversion**  | `tuple([1, 2, 3])`              | `list((1, 2, 3))`               |
+

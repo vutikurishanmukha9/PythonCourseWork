@@ -94,3 +94,18 @@ numbers.sort()
 print(numbers) # [1, 1, 3, 4, 5, 9]
 numbers.reverse()
 print(numbers) # [9, 5, 4, 3, 1, 1]
+
+
+# ## 6. Differences Between List and Tuple
+
+# | Feature         | List                            | Tuple                           |
+# |-----------------|---------------------------------|---------------------------------|
+# | **Mutability**  | Mutable (can be changed)        | Immutable (cannot be changed)   |
+# | **Syntax**      | `[1, 2, 3]`                     | `(1, 2, 3)` or `1, 2, 3`        |
+# | **Speed**       | Slower                          | Faster                          | 
+# | **Memory**      | Uses more memory                | More memory-efficient           |
+# | **Methods**     | Many: `append()`, `pop()`, etc. | Few: `count()`, `index()        |
+# | **Hashable**    | Not hashable                    | Hashable (if elements are)      |
+# | **Dict Key**    | Cannot be used as key           | Can be used as key              |
+# | **Use Case**    | When data may change            | When data should remain constant|
+# | **Conversion**  | `tuple([1, 2, 3])`              | `list((1, 2, 3))`               |
