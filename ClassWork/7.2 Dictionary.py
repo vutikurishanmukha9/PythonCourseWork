@@ -101,16 +101,6 @@ print(sorted({3: "x", 1: "z", 2: "y"}))  # Output: [1, 2, 3]
 
 # 5. Nested Dictionaries
 # Dictionary containing other dictionaries as values
-students = {
-    "Alice": {"age": 21, "course": "CS"},
-    "Bob": {"age": 22, "course": "Math"}
-}
+students = {"Alice": {"age": 21, "course": "CS"},"Bob": {"age": 22, "course": "Math"}}
 
 print(students["Alice"]["course"])  # Output: CS
-
-
-
-
-
-
-
