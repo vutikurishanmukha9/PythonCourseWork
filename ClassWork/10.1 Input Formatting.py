@@ -75,3 +75,17 @@ username, password = input("Enter username and password:").split()
 print("Username:", username) #Enter username and password: user01 mypassword123
 print("Password:", password) #Username: user01 
 #Password: mypassword123
+
+
+# | **Input Type**        | **Example Input**           | **Code Snippet**                    | **Output Type** |
+# | --------------------- | --------------------------- | ----------------------------------- | --------------- |
+# | **String**            | `Ankit`                     | `input()`                           | `str`           |
+# | **Integer**           | `23`                        | `int(input())`                      | `int`           |
+# | **Float**             | `56.78`                     | `float(input())`                    | `float`         |
+# | **List (str)**        | `1 2 3`                     | `input().split()`                   | `list[str]`     |
+# | **List (int)**        | `10 20 30`                  | `list(map(int, input().split()))`   | `list[int]`     |
+# | **List (float)**      | `5.5 6.6`                   | `list(map(float, input().split()))` | `list[float]`   |
+# | **Tuple (int)**       | `100 200 300`               | `tuple(map(int, input().split()))`  | `tuple[int]`    |
+# | **Set (int)**         | `1 2 2 3 1`                 | `set(map(int, input().split()))`    | `set[int]`      |
+# | **Dictionary (eval)** | `{'name':'Teja', 'age':25}` | `eval(input())`                     | `dict`          |
+# | **Multiple Unpacked** | `admin admin123`            | `a, b = input().split()`            | `str, str`      |
