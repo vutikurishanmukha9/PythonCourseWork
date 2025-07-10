@@ -47,3 +47,25 @@
 #         #if-false stmts
 # else:
 #     #False stmts
+
+'''Example Using only IF'''
+s =input("Enter the status(R O G):")
+
+if s == 'R':
+    print("Stop")
+if s == 'O':
+    print("Ready")
+if s == 'G':
+    print("Gooooooooo")
+
+'''Example Using only If and Else'''
+
+items = ['shoes','laptop','smartwatch','phone','airpods','toycars']
+
+print("Welcome to Amazon".center(45,'*'))
+searchinput = input("Enter the item:").lower()
+
+if searchinput in items:
+    print(f'{searchinput} found. Buy now!!')
+else:
+    print(f'{searchinput} is not found.It is out of stock can you check me later')
