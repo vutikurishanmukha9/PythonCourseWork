@@ -69,3 +69,24 @@ if searchinput in items:
     print(f'{searchinput} found. Buy now!!')
 else:
     print(f'{searchinput} is not found.It is out of stock can you check me later')
+
+'''Example for If, Elif and Else'''
+'''Weekend Budget Plan'''
+
+amount = int(input("Enter the Amount that you want to spend on weekend:"))
+if amount > 20000:
+    print("Go to Goa")
+elif amount > 15000:
+    print("Go for Shopping")
+elif amount > 10000:
+    print("Clubbing")
+elif amount > 5000:
+    print("Cafe/Dinner")
+elif amount > 2000:
+    print("Maintaincess")
+elif amount > 500:
+    print("Go for the Movie")
+elif amount > 100:
+    print("Go for the street food")
+else:
+    print("Wait for Your Time")
