@@ -91,19 +91,6 @@ elif amount > 100:
     print("Go for the street food")
 else:
     print("Wait for Your Time")
-
-
-'''Example for If, Elif and Else'''
-'''Grades Based On Your marks'''
-#O grade = above 90 Marks
-#A+ grade = 90 marks - 85 marks
-#A grade = 84 marks - 71 marks
-#B grade = 70 marks - 61 marks
-#C grade = 60 marks - 51 marks
-#D grade = 50 marks - 41 marks
-#E grade = 40 marks - 35 marks
-#F grade = Below 35 marks
-
 data = {
     1:{'name':'kohli','attempt_status':False,'Python':0,'sql':0,'powerBI':0},
     2:{'name':'Bhuvi','attempt_status':True,'Python':100,'sql':90,'powerBI':80},
@@ -181,3 +168,33 @@ elif c > a and c > b:
     print(f'{c} is the maximum among the three numbers')
 else:
     print(f'All the {a} {b} {c} are equal')
+
+'''Example for If, Elif and Else'''
+'''Grades Based On Your marks'''
+#O grade = above 90 Marks
+#A+ grade = 90 marks - 85 marks
+#A grade = 84 marks - 71 marks
+#B grade = 70 marks - 61 marks
+#C grade = 60 marks - 51 marks
+#D grade = 50 marks - 41 marks
+#E grade = 40 marks - 35 marks
+#F grade = Below 35 marks
+
+Marks = int(input("Enter the Marks of the student: "))
+
+if Marks > 90:
+    print("You Got O grade")
+elif Marks > 85 and Marks < 90 :
+    print("You got A+ Grade")
+elif Marks > 70 and Marks < 85 :
+    print("You got A grade")
+elif Marks > 60 and Marks < 70 :
+    print("You got B grade")
+elif Marks > 50 and Marks < 60 :
+    print("You got C grade")
+elif Marks > 40 and Marks < 50 :
+    print("You got D grade")
+elif Marks > 35 and Marks < 40 :
+    print("You got E grade")
+else:
+    print("You Failed")
