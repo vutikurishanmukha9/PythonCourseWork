@@ -130,3 +130,44 @@ if data[stuid]['attempt_status']:
         print("Feedback: You have to work hard!")
 else:
     print("Student has not attempted the test.")
+    
+# '''Ticket Booking'''
+# seats = {
+#     'L1':True,
+#     'L2':True,
+#     'U1':True,
+#     'U2':False,}
+
+# print("Bus seats:",seats.Keys())
+
+
+
+
+'''Postive or Negative'''
+num = int(input("Enter a number: "))
+
+if num > 0:
+    print(num,":is a Positve number")
+elif num < 0:
+    print(num,":is a negative number")
+else:
+    print(num,":is equal to Zero")
+
+'''Even or ODD'''
+
+num = int(input())
+
+if num % 2 == 0:
+    print(f'{num} is the even number')
+else:
+    print(f'{num} is the ODD number')
+
+'''Leap Year'''
+
+Year = int(input("Enter the year: "))
+if Year % 400 == 0 or Year % 4 == 0 and Year % 100 != 0:
+    print(f'{Year} is a leap year')
+else:
+    print(f'{Year} is not a leap year')
+
+
