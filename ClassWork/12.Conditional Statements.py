@@ -177,5 +177,7 @@ if a > b and a > c:
     print(f'{a} is the maximum among the three numbers')
 elif b > c and b > c:
     print(f'{b} is the maximum among the three numbers')
-else:
+elif c > a and c > b:
     print(f'{c} is the maximum among the three numbers')
+else:
+    print(f'All the {a} {b} {c} are equal')
