@@ -171,3 +171,11 @@ else:
     print(f'{Year} is not a leap year')
 
 
+'''Find the Maximum of Three Numbers'''
+a,b,c = map(int,input("Enter three numbers: ").split(" "))
+if a > b and a > c:
+    print(f'{a} is the maximum among the three numbers')
+elif b > c and b > c:
+    print(f'{b} is the maximum among the three numbers')
+else:
+    print(f'{c} is the maximum among the three numbers')
