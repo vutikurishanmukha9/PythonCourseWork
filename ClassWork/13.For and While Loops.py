@@ -92,5 +92,33 @@ while bullets > 0:
 # 1 are left
 # No bullets are there change the mag
 
+'''Login Attempts example for the While loop'''
+
+email,pwd = 'abc@gmail.com','abcdefg'
+
+max_attempts = 5
+
+while max_attempts > 0:
+    user_email = input("Enter the Gmail: ")
+    password = input("Enter the Password: ")
+    if user_email == email and password == pwd:
+        print("Login Succesfull")
+        break
+    else:
+        print("Invalid Password")
+        max_attempts -= 1
+else:
+    print("Try again after Some time")
+
+'''output'''
+
+#For valid login
+# Enter the Gmail: abc@gmail.com
+# Enter the Password: abcdefg
+# Login Succesfull
+
+#For invalid login
+
+
 
 
