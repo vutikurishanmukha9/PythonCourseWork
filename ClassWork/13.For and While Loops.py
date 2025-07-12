@@ -70,5 +70,27 @@ for i in l:
 
 #While Loop
 
+'''No. of bullets left in the mag'''
+
+bullets = 10
+while bullets > 0:
+    bullets -= 1
+    if bullets > 0:
+        print(f"{bullets} are left")
+    else:
+        print("No bullets are there change the mag")
+
+'''Output'''
+# 9 are left
+# 8 are left
+# 7 are left
+# 6 are left
+# 5 are left
+# 4 are left
+# 3 are left
+# 2 are left
+# 1 are left
+# No bullets are there change the mag
+
 
 
