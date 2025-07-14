@@ -28,13 +28,21 @@ if Willing_To_order_the_food == "YES":
 
 # Printing Outputs
 print("\n--- Passenger Details ---")
+# Comma-separated printing
 print("Count of the Passenger travelling is:", Passenger_Count)
-print("Name of the passenger travelling is:", Passenger_Name)
-print("The Boarding Time of", Passenger_Name, "is:", Boarding_time)
-print("The Destination station of the passenger is:", Destination_Station)
-print("The Boarding station of the passenger is:", Boarding_station)
-print("The Confirmed seat number of the Passenger is:", Confirmed_Seat_Number)
-print("Will the passenger order food?", True if Willing_To_order_the_food == "YES" else False)
-print("The ordered food of the passenger is:", Ordered_Food if Ordered_Food else "No food ordered.")
+# String concatenation
+print("Name of the passenger travelling is: " + Passenger_Name)
+# f-string
+print(f"The Boarding Time of {Passenger_Name} is: {Boarding_time}")
+# .format() method
+print("The Destination station of the passenger is: {}".format(Destination_Station))
+# %% formatting
+print("The Boarding station of the passenger is: %s" % Boarding_station)
+# f-string for tuple
+print(f"The Confirmed seat number of the Passenger is: {Confirmed_Seat_Number}")
+# Ternary in f-string
+print(f"Will the passenger order food? {'True' if Willing_To_order_the_food == 'YES' else 'False'}")
+# .format() with conditional
+print("The ordered food of the passenger is: {}".format(Ordered_Food if Ordered_Food else "No food ordered."))
 
 
