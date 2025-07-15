@@ -102,4 +102,14 @@ for num in n:
 print("List of Non-Zeros:", non_zero_list)
 
 
-
+#The Frequncy Counter (Dictonary + String)
+#Input - A single-line string
+#Output - Q dictionary with charcters as keys and their counts as values
+n = input("Enter a string: ")
+frequency_counter = {}
+for char in n:
+    if char in frequency_counter:
+        frequency_counter[char] += 1
+    else:
+        frequency_counter[char] = 1
+print("Character Frequency:", frequency_counter)
