@@ -90,4 +90,16 @@ for word in words:
 result = ' '.join(reversed_word_list)
 print("Reversed sentence word by word:", result)
 
+#Clean My List (List and Type Conversions)
+#Input - String of numbers 
+#Output - List of Non-Zeros
+
+n = list(map(int,input("Enter the list of the numbers: ").split(" ")))
+non_zero_list = []
+for num in n:
+    if num != 0:
+        non_zero_list.append(num)
+print("List of Non-Zeros:", non_zero_list)
+
+
 
