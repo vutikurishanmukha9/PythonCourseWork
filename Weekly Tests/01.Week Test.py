@@ -59,9 +59,8 @@ else:
 #Clean my list (List and Type Conversions)
 #Input - String of numbers of names seperated by commas
 #Output - Print a sorted list (alphabetical) of unique
-n = input("Enter names or numbers separated by commas: ").split(",")
-unique_items = set(n)              
-sorted_list = sorted(unique_items) 
+n = set(input("Enter names: ").split(","))            
+sorted_list = sorted(n)
 print(list(sorted_list))         
 
 #Student Marks Record (Dictonary Operations)
@@ -81,35 +80,51 @@ print("Topper:", topper)
 #Input - a string sentence
 # output - Each word reversed, seperated by space
 
-sentence = input("Enter a sentence: ")
-words = sentence.split()
+sen = input().split()
+for i in sen:
+    print(i[::-1], end=" ")
+
+#Reversed Sentence Word by Word'''sentence = input("Enter a sentence: ")
+'''words = sentence.split()
 reversed_word_list = []
 for word in words:
     reversed_word = word[::-1]    
     reversed_word_list.append(reversed_word)  
 result = ' '.join(reversed_word_list)
-print("Reversed sentence word by word:", result)
+print("Reversed sentence word by word:", result)'''
 
 #Clean My List (List and Type Conversions)
 #Input - String of numbers 
 #Output - List of Non-Zeros
 
 n = list(map(int,input("Enter the list of the numbers: ").split(" ")))
-non_zero_list = []
+while 0 in n:
+    n.remove(0)
+print("List of Non-Zeros:", n)
+
+#Clean My List (List and Type Conversions)
+'''non_zero_list = []
 for num in n:
     if num != 0:
         non_zero_list.append(num)
-print("List of Non-Zeros:", non_zero_list)
+print("List of Non-Zeros:", non_zero_list)'''
 
 
 #The Frequncy Counter (Dictonary + String)
 #Input - A single-line string
 #Output - Q dictionary with charcters as keys and their counts as values
 n = input("Enter a string: ")
-frequency_counter = {}
+data = {}
+for i in n:
+    if i not in data and i != " ":
+        data[i] = n.count(i)
+print("Character Frequency:", data)
+
+#Alternative method to count character frequency using dictionary
+'''frequency_counter = {}
 for char in n:
     if char in frequency_counter:
         frequency_counter[char] += 1
     else:
         frequency_counter[char] = 1
-print("Character Frequency:", frequency_counter)
+print("Character Frequency:", frequency_counter)'''
