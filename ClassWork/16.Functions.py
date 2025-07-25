@@ -55,3 +55,45 @@ while True:
         check_history()
     else:
         print("Invalid coice. Try Again")
+
+
+
+def add(a, b):
+    return a + b
+
+def sub(a, b):
+    return a - b
+
+def multiplication(a, b):
+    return a * b
+
+def div(a, b):
+    return a // b  
+
+def mod(a, b):
+    return a % b
+
+value = input("Enter the Value (e.g., 12+5): ")
+op = ""
+for i in value:
+    if not i.isdigit():
+        op = i
+        break
+
+if op:
+    a, b = value.split(op)
+    a, b = int(a), int(b)
+    if op == '+':
+        print(add(a, b))
+    elif op == '-':
+        print(sub(a, b))
+    elif op == '*':
+        print(multiplication(a, b))
+    elif op == '/':
+        print(div(a, b))
+    elif op == '%':
+        print(mod(a, b))
+    else:
+        print("Unsupported operator.")
+else:
+    print("No operator found in input.")
