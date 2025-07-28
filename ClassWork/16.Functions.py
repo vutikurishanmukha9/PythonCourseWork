@@ -97,3 +97,15 @@ if op:
         print("Unsupported operator.")
 else:
     print("No operator found in input.")
+
+
+
+'''Pass by value and pass by refernce'''
+#Using INT data type
+def update(n):
+    n = n + 100
+    print("Inside funtion:",n)
+
+n = 150
+update(n)
+print("Outside function:",n)
