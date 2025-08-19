@@ -14,11 +14,11 @@
 
 ---
 
-## 2. 📦 Core Concepts of OOP
+2. 📦 Core Concepts of OOP
 
-### 🔹 Class
+ Class
 
-* A **blueprint** for creating objects.
+ A blueprint** for creating objects.
 * Defines:
 
   * **Attributes (data members)** → variables
