@@ -12,8 +12,6 @@ Core Principles
 -    Inheritance   : Creating new classes based on existing classes
 -    Polymorphism   : Using a single interface to represent different underlying forms
 
----
-
 Classes and Objects
 
  What is a Class?
