@@ -1,370 +1,371 @@
-# Complete Python Object-Oriented Programming (OOP) Interview Guide
+    Complete Python Object-Oriented Programming (OOP) Interview Guide
 
-## Fundamental Concepts
+ Fundamental Concepts
 
-### What is Object-Oriented Programming?
-Object-Oriented Programming is a programming paradigm that organizes code around objects and classes rather than functions and logic. It models real-world entities as objects that have properties (attributes) and behaviors (methods).
+What is Object-Oriented Programming?
+Object-Oriented Programming is a programming paradigm that organizes code around objects and classes rather than functions and logic. 
+It models real-world entities as objects that have properties (attributes) and behaviors (methods).
 
-### Core Principles
-- **Abstraction**: Hiding complex implementation details while showing only essential features
-- **Encapsulation**: Bundling data and methods together and controlling access to them
-- **Inheritance**: Creating new classes based on existing classes
-- **Polymorphism**: Using a single interface to represent different underlying forms
+Core Principles
+-    Abstraction   : Hiding complex implementation details while showing only essential features
+-    Encapsulation   : Bundling data and methods together and controlling access to them
+-    Inheritance   : Creating new classes based on existing classes
+-    Polymorphism   : Using a single interface to represent different underlying forms
 
 ---
 
-## Classes and Objects
+Classes and Objects
 
-### What is a Class?
+ What is a Class?
 A class is a blueprint or template for creating objects. It defines the structure and behavior that its objects will have. Think of it as a cookie cutter that defines the shape of cookies.
 
-**Key Characteristics of Classes:**
+   Key Characteristics of Classes:   
 - Acts as a user-defined data type
 - Contains attributes (data) and methods (functions)
 - Does not consume memory until instantiated
 - Can be inherited by other classes
 - Defines the interface for its objects
 
-### What is an Object (Instance)?
+What is an Object (Instance)?
 An object is a specific instance of a class. It's the actual entity created from the class blueprint with real values assigned to its attributes.
 
-**Key Characteristics of Objects:**
+Key Characteristics of Objects:
 - Has a unique identity in memory
 - Contains actual data values
 - Can interact with other objects
 - Has a lifecycle (creation, usage, destruction)
 - Consumes memory
 
-### Class vs Instance vs Object
-- **Class**: The blueprint/template
-- **Instance**: The process of creating an object from a class
-- **Object**: The actual entity created (often used interchangeably with instance)
+Class vs Instance vs Object
+-    Class   : The blueprint/template
+-    Instance   : The process of creating an object from a class
+-    Object   : The actual entity created (often used interchangeably with instance)
 
 ---
 
-##Attributes in Detail
+      Attributes in Detail
 
-### What are Attributes?
+    What are Attributes?
 Attributes are variables that belong to a class or instance. They store data/state information about the object.
 
-### Types of Attributes
+ Types of Attributes
 
-#### 1. Instance Attributes
-- **Definition**: Attributes that belong to a specific instance of a class
-- **Scope**: Unique to each object
-- **Memory**: Each instance has its own copy
-- **Access**: Through instance reference
-- **Modification**: Can be different for each instance
+       1. Instance Attributes
+-    Definition   : Attributes that belong to a specific instance of a class
+-    Scope   : Unique to each object
+-    Memory   : Each instance has its own copy
+-    Access   : Through instance reference
+-    Modification   : Can be different for each instance
 
-#### 2. Class Attributes
-- **Definition**: Attributes that belong to the class itself, shared by all instances
-- **Scope**: Common to all instances of the class
-- **Memory**: Single copy shared across all instances
-- **Access**: Through class name or instance (but modification should be through class)
-- **Modification**: Affects all instances
+       2. Class Attributes
+-    Definition   : Attributes that belong to the class itself, shared by all instances
+-    Scope   : Common to all instances of the class
+-    Memory   : Single copy shared across all instances
+-    Access   : Through class name or instance (but modification should be through class)
+-    Modification   : Affects all instances
 
-#### 3. Static Attributes
-- **Definition**: Similar to class attributes but more explicitly defined as constants
-- **Usage**: For values that never change and are related to the class
-- **Convention**: Usually written in UPPERCASE
+       3. Static Attributes
+-    Definition   : Similar to class attributes but more explicitly defined as constants
+-    Usage   : For values that never change and are related to the class
+-    Convention   : Usually written in UPPERCASE
 
-### Attribute Access Modifiers
+    Attribute Access Modifiers
 
-#### Public Attributes
-- **Syntax**: `attribute_name`
-- **Access**: Can be accessed from anywhere
-- **Convention**: No underscore prefix
+       Public Attributes
+-    Syntax   : `attribute_name`
+-    Access   : Can be accessed from anywhere
+-    Convention   : No underscore prefix
 
-#### Protected Attributes
-- **Syntax**: `_attribute_name`
-- **Access**: Intended for internal use and subclasses
-- **Convention**: Single underscore prefix
-- **Note**: Python doesn't enforce this; it's a convention
+       Protected Attributes
+-    Syntax   : `_attribute_name`
+-    Access   : Intended for internal use and subclasses
+-    Convention   : Single underscore prefix
+-    Note   : Python doesn't enforce this; it's a convention
 
-#### Private Attributes
-- **Syntax**: `__attribute_name`
-- **Access**: Name mangling makes it harder to access from outside
-- **Convention**: Double underscore prefix
-- **Implementation**: Python changes the name internally
-
----
-
-## Types of Classes
-
-### 1. Regular Classes
-- **Definition**: Standard classes that can be instantiated
-- **Purpose**: Create objects with specific attributes and methods
-- **Instantiation**: Can create multiple objects
-
-### 2. Abstract Classes
-- **Definition**: Classes that cannot be instantiated directly
-- **Purpose**: Serve as base classes for other classes
-- **Implementation**: Use `abc` module (Abstract Base Class)
-- **Contains**: Abstract methods that must be implemented by subclasses
-
-### 3. Concrete Classes
-- **Definition**: Classes that can be instantiated
-- **Purpose**: Fully implemented classes ready for object creation
-- **Characteristics**: All methods have implementations
-
-### 4. Static Classes
-- **Definition**: Classes that contain only static methods and attributes
-- **Purpose**: Utility classes that don't need instantiation
-- **Usage**: Accessed through class name directly
-
-### 5. Singleton Classes
-- **Definition**: Classes that allow only one instance to exist
-- **Purpose**: Ensure only one object of the class exists
-- **Implementation**: Control instantiation process
-
-### 6. Meta Classes
-- **Definition**: Classes whose instances are classes themselves
-- **Purpose**: Control class creation process
-- **Concept**: "Classes of classes"
-
-### 7. Data Classes
-- **Definition**: Classes primarily designed to store data
-- **Purpose**: Reduce boilerplate code for simple classes
-- **Implementation**: Use `@dataclass` decorator
-
-### 8. Nested Classes
-- **Definition**: Classes defined inside other classes
-- **Purpose**: Logical grouping and encapsulation
-- **Types**: Inner classes that may or may not access outer class
+       Private Attributes
+-    Syntax   : `__attribute_name`
+-    Access   : Name mangling makes it harder to access from outside
+-    Convention   : Double underscore prefix
+-    Implementation   : Python changes the name internally
 
 ---
 
-## Methods and Their Types
+       Types of Classes
 
-### Instance Methods
-- **Definition**: Methods that operate on instance data
-- **First Parameter**: `self` (reference to the instance)
-- **Access**: Through instance objects
-- **Purpose**: Operate on instance-specific data
+    1. Regular Classes
+-    Definition   : Standard classes that can be instantiated
+-    Purpose   : Create objects with specific attributes and methods
+-    Instantiation   : Can create multiple objects
 
-### Class Methods
-- **Definition**: Methods that operate on class data
-- **Decorator**: `@classmethod`
-- **First Parameter**: `cls` (reference to the class)
-- **Access**: Through class name or instance
-- **Purpose**: Work with class-level data or create instances
+    2. Abstract Classes
+-    Definition   : Classes that cannot be instantiated directly
+-    Purpose   : Serve as base classes for other classes
+-    Implementation   : Use `abc` module (Abstract Base Class)
+-    Contains   : Abstract methods that must be implemented by subclasses
 
-### Static Methods
-- **Definition**: Methods that don't access instance or class data
-- **Decorator**: `@staticmethod`
-- **Parameters**: No mandatory first parameter
-- **Access**: Through class name or instance
-- **Purpose**: Utility functions related to the class
+    3. Concrete Classes
+-    Definition   : Classes that can be instantiated
+-    Purpose   : Fully implemented classes ready for object creation
+-    Characteristics   : All methods have implementations
 
-### Property Methods
-- **Definition**: Methods that can be accessed like attributes
-- **Decorator**: `@property`
-- **Purpose**: Provide controlled access to attributes
-- **Types**: Getter, setter, deleter
+    4. Static Classes
+-    Definition   : Classes that contain only static methods and attributes
+-    Purpose   : Utility classes that don't need instantiation
+-    Usage   : Accessed through class name directly
+
+    5. Singleton Classes
+-    Definition   : Classes that allow only one instance to exist
+-    Purpose   : Ensure only one object of the class exists
+-    Implementation   : Control instantiation process
+
+    6. Meta Classes
+-    Definition   : Classes whose instances are classes themselves
+-    Purpose   : Control class creation process
+-    Concept   : "Classes of classes"
+
+    7. Data Classes
+-    Definition   : Classes primarily designed to store data
+-    Purpose   : Reduce boilerplate code for simple classes
+-    Implementation   : Use `@dataclass` decorator
+
+    8. Nested Classes
+-    Definition   : Classes defined inside other classes
+-    Purpose   : Logical grouping and encapsulation
+-    Types   : Inner classes that may or may not access outer class
 
 ---
 
-## The Four Pillars of OOP
+       Methods and Their Types
 
-### 1. Encapsulation
-**Definition**: Bundling data and methods together and controlling access to them.
+    Instance Methods
+-    Definition   : Methods that operate on instance data
+-    First Parameter   : `self` (reference to the instance)
+-    Access   : Through instance objects
+-    Purpose   : Operate on instance-specific data
 
-**Benefits:**
+    Class Methods
+-    Definition   : Methods that operate on class data
+-    Decorator   : `@classmethod`
+-    First Parameter   : `cls` (reference to the class)
+-    Access   : Through class name or instance
+-    Purpose   : Work with class-level data or create instances
+
+    Static Methods
+-    Definition   : Methods that don't access instance or class data
+-    Decorator   : `@staticmethod`
+-    Parameters   : No mandatory first parameter
+-    Access   : Through class name or instance
+-    Purpose   : Utility functions related to the class
+
+    Property Methods
+-    Definition   : Methods that can be accessed like attributes
+-    Decorator   : `@property`
+-    Purpose   : Provide controlled access to attributes
+-    Types   : Getter, setter, deleter
+
+---
+
+       The Four Pillars of OOP
+
+    1. Encapsulation
+   Definition   : Bundling data and methods together and controlling access to them.
+
+   Benefits:   
 - Data protection and security
 - Code modularity and organization
 - Easier maintenance and debugging
 - Implementation hiding
 
-**Implementation Techniques:**
+   Implementation Techniques:   
 - Access modifiers (public, protected, private)
 - Property decorators for controlled access
 - Getter and setter methods
 
-### 2. Inheritance
-**Definition**: Creating new classes based on existing classes, inheriting their attributes and methods.
+    2. Inheritance
+   Definition   : Creating new classes based on existing classes, inheriting their attributes and methods.
 
-**Types of Inheritance:**
-- **Single Inheritance**: One child, one parent
-- **Multiple Inheritance**: One child, multiple parents
-- **Multilevel Inheritance**: Chain of inheritance
-- **Hierarchical Inheritance**: Multiple children from one parent
-- **Hybrid Inheritance**: Combination of multiple types
+   Types of Inheritance:   
+-    Single Inheritance   : One child, one parent
+-    Multiple Inheritance   : One child, multiple parents
+-    Multilevel Inheritance   : Chain of inheritance
+-    Hierarchical Inheritance   : Multiple children from one parent
+-    Hybrid Inheritance   : Combination of multiple types
 
-**Key Concepts:**
-- **Parent/Base/Super Class**: The class being inherited from
-- **Child/Derived/Sub Class**: The class that inherits
-- **Method Resolution Order (MRO)**: Order in which methods are searched
-- **super()**: Function to access parent class methods
+   Key Concepts:   
+-    Parent/Base/Super Class   : The class being inherited from
+-    Child/Derived/Sub Class   : The class that inherits
+-    Method Resolution Order (MRO)   : Order in which methods are searched
+-    super()   : Function to access parent class methods
 
-### 3. Polymorphism
-**Definition**: Using a single interface to represent different underlying forms.
+    3. Polymorphism
+   Definition   : Using a single interface to represent different underlying forms.
 
-**Types:**
-- **Method Overriding**: Redefining parent class methods in child class
-- **Method Overloading**: Multiple methods with same name but different parameters (limited in Python)
-- **Operator Overloading**: Defining behavior for operators
-- **Duck Typing**: "If it walks like a duck and quacks like a duck, it's a duck"
+   Types:   
+-    Method Overriding   : Redefining parent class methods in child class
+-    Method Overloading   : Multiple methods with same name but different parameters (limited in Python)
+-    Operator Overloading   : Defining behavior for operators
+-    Duck Typing   : "If it walks like a duck and quacks like a duck, it's a duck"
 
-**Benefits:**
+   Benefits:   
 - Code flexibility and reusability
 - Easier maintenance
 - Dynamic method binding
 
-### 4. Abstraction
-**Definition**: Hiding complex implementation details while showing only essential features.
+    4. Abstraction
+   Definition   : Hiding complex implementation details while showing only essential features.
 
-**Implementation Methods:**
+   Implementation Methods:   
 - Abstract base classes
 - Interfaces (through ABC)
 - Private methods and attributes
 - Property decorators
 
-**Benefits:**
+   Benefits:   
 - Reduces complexity
 - Focuses on what an object does rather than how
 - Easier to understand and maintain
 
 ---
 
-## Advanced OOP Concepts
+       Advanced OOP Concepts
 
-### Method Resolution Order (MRO)
-- **Definition**: The order in which Python searches for methods in inheritance hierarchy
-- **Algorithm**: C3 Linearization
-- **Access**: `ClassName.__mro__` or `ClassName.mro()`
-- **Importance**: Critical for multiple inheritance scenarios
+    Method Resolution Order (MRO)
+-    Definition   : The order in which Python searches for methods in inheritance hierarchy
+-    Algorithm   : C3 Linearization
+-    Access   : `ClassName.__mro__` or `ClassName.mro()`
+-    Importance   : Critical for multiple inheritance scenarios
 
-### Composition vs Inheritance
-- **Composition**: "Has-a" relationship - building complex objects from simpler ones
-- **Inheritance**: "Is-a" relationship - creating specialized versions of existing classes
-- **When to Use**: Composition is often preferred for flexibility
+    Composition vs Inheritance
+-    Composition   : "Has-a" relationship - building complex objects from simpler ones
+-    Inheritance   : "Is-a" relationship - creating specialized versions of existing classes
+-    When to Use   : Composition is often preferred for flexibility
 
-### Mixins
-- **Definition**: Classes designed to be mixed with other classes through multiple inheritance
-- **Purpose**: Provide specific functionality that can be added to multiple classes
-- **Characteristics**: Usually small, focused, and don't stand alone
+    Mixins
+-    Definition   : Classes designed to be mixed with other classes through multiple inheritance
+-    Purpose   : Provide specific functionality that can be added to multiple classes
+-    Characteristics   : Usually small, focused, and don't stand alone
 
-### Descriptors
-- **Definition**: Objects that define how attribute access is handled
-- **Types**: Data descriptors and non-data descriptors
-- **Implementation**: Define `__get__`, `__set__`, `__delete__` methods
-- **Usage**: Behind property decorators
+    Descriptors
+-    Definition   : Objects that define how attribute access is handled
+-    Types   : Data descriptors and non-data descriptors
+-    Implementation   : Define `__get__`, `__set__`, `__delete__` methods
+-    Usage   : Behind property decorators
 
-### Metaclasses
-- **Definition**: Classes whose instances are classes
-- **Purpose**: Control class creation process
-- **Usage**: Customize class behavior at creation time
-- **Default**: `type` is the default metaclass
-
----
-
-## Special Methods (Magic Methods)
-
-### Object Creation and Initialization
-- **`__new__`**: Controls object creation
-- **`__init__`**: Initializes object after creation
-- **`__del__`**: Called when object is garbage collected
-
-### String Representation
-- **`__str__`**: Human-readable string representation
-- **`__repr__`**: Developer-friendly string representation
-- **`__format__`**: Custom formatting
-
-### Comparison Methods
-- **`__eq__`**: Equality comparison
-- **`__lt__`, `__le__`, `__gt__`, `__ge__`**: Ordering comparisons
-- **`__ne__`**: Not equal comparison
-
-### Arithmetic Operations
-- **`__add__`, `__sub__`, `__mul__`, `__div__`**: Basic arithmetic
-- **`__radd__`, `__rsub__`**: Right-hand arithmetic
-- **`__iadd__`, `__isub__`**: In-place arithmetic
-
-### Container Methods
-- **`__len__`**: Length of container
-- **`__getitem__`, `__setitem__`, `__delitem__`**: Item access
-- **`__contains__`**: Membership testing
-- **`__iter__`**: Make object iterable
+    Metaclasses
+-    Definition   : Classes whose instances are classes
+-    Purpose   : Control class creation process
+-    Usage   : Customize class behavior at creation time
+-    Default   : `type` is the default metaclass
 
 ---
 
-## Design Patterns
+       Special Methods (Magic Methods)
 
-### Creational Patterns
-- **Singleton**: Ensure only one instance exists
-- **Factory**: Create objects without specifying exact class
-- **Builder**: Construct complex objects step by step
+    Object Creation and Initialization
+-    `__new__`   : Controls object creation
+-    `__init__`   : Initializes object after creation
+-    `__del__`   : Called when object is garbage collected
 
-### Structural Patterns
-- **Adapter**: Make incompatible interfaces work together
-- **Decorator**: Add new functionality to objects dynamically
-- **Facade**: Provide simplified interface to complex subsystem
+    String Representation
+-    `__str__`   : Human-readable string representation
+-    `__repr__`   : Developer-friendly string representation
+-    `__format__`   : Custom formatting
 
-### Behavioral Patterns
-- **Observer**: Define subscription mechanism for object events
-- **Strategy**: Define family of algorithms and make them interchangeable
-- **Command**: Encapsulate requests as objects
+    Comparison Methods
+-    `__eq__`   : Equality comparison
+-    `__lt__`, `__le__`, `__gt__`, `__ge__`   : Ordering comparisons
+-    `__ne__`   : Not equal comparison
+
+    Arithmetic Operations
+-    `__add__`, `__sub__`, `__mul__`, `__div__`   : Basic arithmetic
+-    `__radd__`, `__rsub__`   : Right-hand arithmetic
+-    `__iadd__`, `__isub__`   : In-place arithmetic
+
+    Container Methods
+-    `__len__`   : Length of container
+-    `__getitem__`, `__setitem__`, `__delitem__`   : Item access
+-    `__contains__`   : Membership testing
+-    `__iter__`   : Make object iterable
 
 ---
 
-## Common Interview Questions
+       Design Patterns
 
-### Basic Level Questions
+    Creational Patterns
+-    Singleton   : Ensure only one instance exists
+-    Factory   : Create objects without specifying exact class
+-    Builder   : Construct complex objects step by step
 
-**Q: What is the difference between a class and an object?**
+    Structural Patterns
+-    Adapter   : Make incompatible interfaces work together
+-    Decorator   : Add new functionality to objects dynamically
+-    Facade   : Provide simplified interface to complex subsystem
+
+    Behavioral Patterns
+-    Observer   : Define subscription mechanism for object events
+-    Strategy   : Define family of algorithms and make them interchangeable
+-    Command   : Encapsulate requests as objects
+
+---
+
+       Common Interview Questions
+
+    Basic Level Questions
+
+   Q: What is the difference between a class and an object?   
 A: A class is a blueprint or template that defines the structure and behavior, while an object is a specific instance created from that class with actual data values.
 
-**Q: What are the main principles of OOP?**
+   Q: What are the main principles of OOP?   
 A: The four main principles are Encapsulation (data hiding), Inheritance (code reuse), Polymorphism (multiple forms), and Abstraction (hiding complexity).
 
-**Q: What is the difference between instance and class attributes?**
+   Q: What is the difference between instance and class attributes?   
 A: Instance attributes are unique to each object and defined in `__init__`, while class attributes are shared among all instances and defined at the class level.
 
-### Intermediate Level Questions
+    Intermediate Level Questions
 
-**Q: Explain Method Resolution Order (MRO) in Python.**
+   Q: Explain Method Resolution Order (MRO) in Python.   
 A: MRO is the order in which Python searches for methods in inheritance hierarchies. Python uses C3 Linearization algorithm to determine this order, ensuring a consistent and predictable method lookup.
 
-**Q: What is the difference between `__str__` and `__repr__`?**
+   Q: What is the difference between `__str__` and `__repr__`?   
 A: `__str__` provides a human-readable string representation for end users, while `__repr__` provides an unambiguous string representation primarily for developers and debugging.
 
-**Q: How does multiple inheritance work in Python?**
+   Q: How does multiple inheritance work in Python?   
 A: Python supports multiple inheritance where a class can inherit from multiple parent classes. The MRO determines which method is called when there are conflicts. Diamond problem is resolved through linearization.
 
-### Advanced Level Questions
+    Advanced Level Questions
 
-**Q: What are metaclasses and when would you use them?**
+   Q: What are metaclasses and when would you use them?   
 A: Metaclasses are classes whose instances are classes themselves. They control the class creation process and are used for advanced scenarios like enforcing coding standards, automatic registration, or modifying class behavior at creation time.
 
-**Q: Explain the descriptor protocol.**
+   Q: Explain the descriptor protocol.   
 A: Descriptors are objects that define how attribute access is handled through `__get__`, `__set__`, and `__delete__` methods. They're the mechanism behind properties, methods, and static methods.
 
-**Q: What is the difference between composition and inheritance?**
+   Q: What is the difference between composition and inheritance?   
 A: Inheritance creates "is-a" relationships and can lead to tight coupling, while composition creates "has-a" relationships and promotes loose coupling. Composition is often preferred for its flexibility.
 
 ---
 
-## Key Interview Tips
+       Key Interview Tips
 
-### Memory Points for Classes
+    Memory Points for Classes
 - Classes are objects too in Python
 - Class names should follow PascalCase convention
 - Classes can have docstrings
 - Classes can be created dynamically using `type()`
 
-### Memory Points for Instances
+    Memory Points for Instances
 - Each instance has a unique `id()`
 - Instances are created by calling the class
 - Instance creation involves `__new__` then `__init__`
 - Instances can have dynamic attributes added
 
-### Memory Points for Attributes
+    Memory Points for Attributes
 - Instance attributes override class attributes with same name
 - Use `hasattr()`, `getattr()`, `setattr()`, `delattr()` for dynamic attribute handling
 - `__dict__` contains instance attributes
 - `vars()` function returns `__dict__`
 
-### Best Practices to Mention
+    Best Practices to Mention
 - Follow SOLID principles
 - Use composition over inheritance when possible
 - Keep classes focused and cohesive
@@ -372,7 +373,7 @@ A: Inheritance creates "is-a" relationships and can lead to tight coupling, whil
 - Document classes and methods properly
 - Handle exceptions appropriately
 
-### Common Pitfalls to Avoid
+    Common Pitfalls to Avoid
 - Mutable default arguments in `__init__`
 - Not calling parent `__init__` in inheritance
 - Circular imports
@@ -381,26 +382,26 @@ A: Inheritance creates "is-a" relationships and can lead to tight coupling, whil
 
 ---
 
-## Technical Details for Deep Discussions
+       Technical Details for Deep Discussions
 
-### Object Identity and Equality
-- **Identity**: Checked with `is` operator, compares memory addresses
-- **Equality**: Checked with `==` operator, compares values
-- **Hash**: Objects used as dictionary keys must be hashable
+    Object Identity and Equality
+-    Identity   : Checked with `is` operator, compares memory addresses
+-    Equality   : Checked with `==` operator, compares values
+-    Hash   : Objects used as dictionary keys must be hashable
 
-### Memory Management
-- **Reference Counting**: Python's primary garbage collection mechanism
-- **Cyclic References**: Handled by cyclic garbage collector
-- **Weak References**: References that don't increase reference count
+    Memory Management
+-    Reference Counting   : Python's primary garbage collection mechanism
+-    Cyclic References   : Handled by cyclic garbage collector
+-    Weak References   : References that don't increase reference count
 
-### Attribute Access Order
+    Attribute Access Order
 1. Data descriptors from type and its bases
 2. Instance attributes from `__dict__`
 3. Non-data descriptors from type and its bases
 4. Class attributes from type
 5. `__getattr__` if defined
 
-### Class Creation Process
+    Class Creation Process
 1. Determine appropriate metaclass
 2. Prepare class namespace
 3. Execute class body
