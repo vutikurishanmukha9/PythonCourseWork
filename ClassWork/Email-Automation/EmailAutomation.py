@@ -3,6 +3,8 @@ import os                   #For file path and file existance existence checks
 import csv                  #To Read email Address from the CSV file
 from email.mime.multipart import MIMEMultipart    #For creating multipart email  messages
 from email.mime.text import MIMEText #For adding plain text to email body
+from email.mime.base import MIMEBase
+from email import encoders
 
 
 SMTP = "smtp.gmail.com"
@@ -11,7 +13,7 @@ SENDER_EMAIL = "Sample@gmail.com"
 SENDER_PASSWORD = "---- ---- ---- ----" 
 
 
-def send_email(to_email, subject, body):
+def send_email(to_email, subject, body, attachemnets = None):
     try:
         msg = MIMEMultipart()
         msg["From"] = SENDER_EMAIL
