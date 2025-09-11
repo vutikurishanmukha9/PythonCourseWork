@@ -1,5 +1,3 @@
-from collections import Counter
-
 print("=== WhatsApp Chat Analyzer ===")
 chat = {}
 n = int(input("Enter the number of chats: "))
@@ -15,20 +13,19 @@ for i in range(n):
     else:
         chat[name] = [message]
 
-# Main menu loop
 while True:
     print("\n" + "="*50)
-    print("WHATSAPP CHAT ANALYSIS OPTIONS")
+    print("WHATSAPP CHAT ANALYSIS")
     print("="*50)
-    print("1.  Count total messages")
-    print("2.  Show unique users")
-    print("3.  Count total words")
-    print("4.  Average words per message")
-    print("5.  Find longest message")
-    print("6.  Find most active user")
-    print("7.  Get user message count")
-    print("8.  Find user's most common word")
-    print("9.  Get user's first & last message")
+    print("1. Count total messages")
+    print("2. Show unique users")
+    print("3. Count total words")
+    print("4. Average words per message")
+    print("5. Find longest message")
+    print("6. Most active user")
+    print("7. User message count")
+    print("8. User's most used word")
+    print("9. User's first & last message")
     print("10. Check if user exists")
     print("11. Find repeated words")
     print("12. User with longest avg message")
@@ -36,204 +33,182 @@ while True:
     print("14. Remove duplicate messages")
     print("15. Sort messages alphabetically")
     print("16. Extract questions")
-    print("17. Calculate reply ratio")
+    print("17. Reply ratio between users")
     print("18. Check for deleted messages")
-    print("0.  Exit")
+    print("0. Exit")
     print("="*50)
     
-    choice = int(input("Enter your choice: "))
+    choice = int(input("Choose option: "))
     
     if choice == 0:
-        print("Thank you for using WhatsApp Chat Analyzer!")
+        print("Goodbye!")
         break
         
     elif choice == 1:
-        # Count total messages
-        total_messages = 0
-        for user_messages in chat.values():
-            total_messages += len(user_messages)
-        print("Total messages:", total_messages)
+        total = 0
+        for messages in chat.values():
+            total += len(messages)
+        print("Total messages:", total)
     
     elif choice == 2:
-        # Show unique users
-        users = list(chat.keys())
-        print("Unique users:", users)
+        print("Unique users:", list(chat.keys()))
     
     elif choice == 3:
-        # Count total words
         total_words = 0
-        for user_messages in chat.values():
-            for message in user_messages:
-                total_words += len(message.split())
+        for messages in chat.values():
+            for msg in messages:
+                total_words += len(msg.split())
         print("Total words:", total_words)
     
     elif choice == 4:
-        # Average words per message
-        total_messages = 0
+        total_msgs = 0
         total_words = 0
+        for messages in chat.values():
+            total_msgs += len(messages)
+            for msg in messages:
+                total_words += len(msg.split())
         
-        for user_messages in chat.values():
-            total_messages += len(user_messages)
-            for message in user_messages:
-                total_words += len(message.split())
-        
-        if total_messages > 0:
-            average = total_words / total_messages
-            print("Average words per message:", round(average, 2))
+        if total_msgs > 0:
+            avg = total_words / total_msgs
+            print("Average words per message:", round(avg, 2))
         else:
             print("No messages found")
     
     elif choice == 5:
-        # Find longest message
-        longest_message = ""
-        for user_messages in chat.values():
-            for message in user_messages:
-                if len(message) > len(longest_message):
-                    longest_message = message
-        print("Longest message:", longest_message)
+        longest = ""
+        for messages in chat.values():
+            for msg in messages:
+                if len(msg) > len(longest):
+                    longest = msg
+        print("Longest message:", longest)
     
     elif choice == 6:
-        # Find most active user
-        most_active_user = ""
-        max_messages = 0
-        
-        for user, user_messages in chat.items():
-            message_count = len(user_messages)
-            if message_count > max_messages:
-                max_messages = message_count
-                most_active_user = user
-        
-        print("Most active user:", most_active_user, "with", max_messages, "messages")
+        top_user = ""
+        max_msgs = 0
+        for user, messages in chat.items():
+            if len(messages) > max_msgs:
+                max_msgs = len(messages)
+                top_user = user
+        print("Most active user:", top_user, "with", max_msgs, "messages")
     
     elif choice == 7:
-        # Get user message count
-        username = input("Enter username: ")
-        if username in chat:
-            message_count = len(chat[username])
-            print(username, "sent", message_count, "messages")
+        user = input("Enter username: ")
+        if user in chat:
+            print(user, "sent", len(chat[user]), "messages")
         else:
             print("User not found")
     
     elif choice == 8:
-        # Find user's most common word
-        username = input("Enter username: ")
-        if username in chat:
-            all_words = []
-            for message in chat[username]:
-                words = message.split()
-                all_words.extend(words)
+        user = input("Enter username: ")
+        if user in chat:
+            word_count = {}
+            for msg in chat[user]:
+                for word in msg.split():
+                    if word in word_count:
+                        word_count[word] += 1
+                    else:
+                        word_count[word] = 1
             
-            if all_words:
-                word_counter = Counter(all_words)
-                most_common_word, count = word_counter.most_common(1)[0]
-                print("Most common word by", username, "is:", most_common_word, "(" + str(count), "times)")
+            if word_count:
+                most_used = ""
+                max_count = 0
+                for word, count in word_count.items():
+                    if count > max_count:
+                        max_count = count
+                        most_used = word
+                print("Most used word by", user + ":", most_used, "(" + str(max_count) + " times)")
             else:
-                print("No words found for this user")
+                print("No words found")
         else:
             print("User not found")
     
     elif choice == 9:
-        # Get user's first and last message
-        username = input("Enter username: ")
-        if username in chat and chat[username]:
-            first_message = chat[username][0]
-            last_message = chat[username][-1]
-            print("First message:", first_message)
-            print("Last message:", last_message)
+        user = input("Enter username: ")
+        if user in chat and chat[user]:
+            print("First message:", chat[user][0])
+            print("Last message:", chat[user][-1])
         else:
             print("User not found or no messages")
     
     elif choice == 10:
-        # Check if user exists
-        username = input("Enter username: ")
-        if username in chat:
+        user = input("Enter username: ")
+        if user in chat:
             print("User exists in the chat")
         else:
             print("User not found")
     
     elif choice == 11:
-        # Find repeated words
-        all_words = []
-        for user_messages in chat.values():
-            for message in user_messages:
-                words = message.split()
-                all_words.extend(words)
+        word_count = {}
+        for messages in chat.values():
+            for msg in messages:
+                for word in msg.split():
+                    if word in word_count:
+                        word_count[word] += 1
+                    else:
+                        word_count[word] = 1
         
-        word_counter = Counter(all_words)
-        repeated_words = []
-        for word, count in word_counter.items():
+        repeated = []
+        for word, count in word_count.items():
             if count > 1:
-                repeated_words.append(word)
-        
-        print("Repeated words:", repeated_words)
+                repeated.append(word)
+        print("Repeated words:", repeated)
     
     elif choice == 12:
-        # User with longest average message
         longest_avg_user = ""
-        max_avg_length = 0
+        max_avg = 0
         
-        for user, user_messages in chat.items():
-            if user_messages:
+        for user, messages in chat.items():
+            if messages:
                 total_length = 0
-                for message in user_messages:
-                    total_length += len(message)
-                avg_length = total_length / len(user_messages)
+                for msg in messages:
+                    total_length += len(msg)
+                avg_length = total_length / len(messages)
                 
-                if avg_length > max_avg_length:
-                    max_avg_length = avg_length
+                if avg_length > max_avg:
+                    max_avg = avg_length
                     longest_avg_user = user
         
         print("User with longest average message:", longest_avg_user)
     
     elif choice == 13:
-        # Count user mentions
         mentioned_user = input("Enter user to check mentions: ")
         mention_count = 0
         
-        for user_messages in chat.values():
-            for message in user_messages:
-                if mentioned_user in message:
+        for messages in chat.values():
+            for msg in messages:
+                if mentioned_user in msg:
                     mention_count += 1
         
         print("'" + mentioned_user + "' mentioned in", mention_count, "messages")
     
     elif choice == 14:
-        # Remove duplicate messages
         for user in chat:
-            unique_messages = []
-            seen_messages = set()
-            
-            for message in chat[user]:
-                if message not in seen_messages:
-                    unique_messages.append(message)
-                    seen_messages.add(message)
-            
-            chat[user] = unique_messages
-        
+            unique = []
+            seen = set()
+            for msg in chat[user]:
+                if msg not in seen:
+                    unique.append(msg)
+                    seen.add(msg)
+            chat[user] = unique
         print("Duplicate messages removed")
     
     elif choice == 15:
-        # Sort messages alphabetically
         for user in chat:
             chat[user].sort()
         print("Messages sorted alphabetically for each user")
     
     elif choice == 16:
-        # Extract questions
-        print("Questions found in chat:")
-        questions_found = False
-        
-        for user, user_messages in chat.items():
-            for message in user_messages:
-                if message.strip().endswith('?'):
-                    print(user + ": " + message)
-                    questions_found = True
-        
-        if not questions_found:
+        print("Questions found:")
+        found = False
+        for user, messages in chat.items():
+            for msg in messages:
+                if msg.strip().endswith('?'):
+                    print(user + ":", msg)
+                    found = True
+        if not found:
             print("No questions found")
     
     elif choice == 17:
-        # Calculate reply ratio
         user1 = input("Enter first user: ")
         user2 = input("Enter second user: ")
         
@@ -246,23 +221,22 @@ while True:
             count2 = len(chat[user2])
         
         if count2 == 0:
-            print("Reply ratio: Infinity (second user sent no messages)")
+            print("Reply ratio: Cannot calculate (second user sent no messages)")
         else:
             ratio = count1 / count2
             print("Reply ratio (" + user1 + "/" + user2 + "):", round(ratio, 2))
     
     elif choice == 18:
-        # Check for deleted messages
-        deleted_keywords = ['deleted', 'message deleted', 'msg deleted']
-        deleted_found = False
+        deleted_words = ['deleted', 'message deleted', 'msg deleted']
+        found = False
         
-        for user, user_messages in chat.items():
-            for message in user_messages:
-                if message.lower() in deleted_keywords:
-                    print(user + ": " + message)
-                    deleted_found = True
+        for user, messages in chat.items():
+            for msg in messages:
+                if msg.lower() in deleted_words:
+                    print(user + ":", msg)
+                    found = True
         
-        if not deleted_found:
+        if not found:
             print("No deleted messages found")
     
     else:
